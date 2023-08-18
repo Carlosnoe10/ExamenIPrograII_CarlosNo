@@ -3,12 +3,11 @@ package examen1progra2_carlosnoé;
 import java.util.ArrayList;
 
 public class Equipos {
+
     public String Nombre;
     public String Nacionalidad;
     public double Rating;
     public ArrayList<Jugadores> Plantilla;
-    
-    
 
     public Equipos() {
     }
@@ -16,8 +15,8 @@ public class Equipos {
     public Equipos(String Nombre, String Nacionalidad, int Rating, ArrayList<Jugadores> Plantilla) {
         this.Nombre = Nombre;
         this.Nacionalidad = Nacionalidad;
-        this.Rating = Rating;
         this.Plantilla = Plantilla;
+        this.Rating = setRating();
     }
 
     public String getNombre() {
@@ -40,8 +39,14 @@ public class Equipos {
         return Rating;
     }
 
-    public void setRating(double Rating) {
-        this.Rating = Rating;
+    public double setRating() {
+        double Prom = 0;
+        for (int i = 0; i < Plantilla.size(); i++) {
+            Prom += Plantilla.get(i).getRating();
+        }
+        Prom = Prom / Plantilla.size();
+        return Prom;
+
     }
 
     public ArrayList<Jugadores> getPlantilla() {
@@ -56,7 +61,5 @@ public class Equipos {
     public String toString() {
         return "Equipos{" + "Nombre=" + Nombre + ", Nacionalidad=" + Nacionalidad + ", Rating=" + Rating + ", Plantilla=" + Plantilla + '}';
     }
-    
-    
-    
+
 }

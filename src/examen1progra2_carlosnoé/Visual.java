@@ -4,15 +4,17 @@
  */
 package examen1progra2_carlosnoé;
 
+import java.util.ArrayList;
+import javax.swing.table.TableColumnModel;
+import javax.swing.text.TabExpander;
+
 /**
  *
  * @author cd507
  */
 public class Visual extends javax.swing.JFrame {
-
-    /**
-     * Creates new form Visual
-     */
+    public static ArrayList<Object>Objetos;
+    
     public Visual() {
         initComponents();
         Panel0.setVisible(true);
@@ -35,12 +37,15 @@ public class Visual extends javax.swing.JFrame {
         jInternalFrame1 = new javax.swing.JInternalFrame();
         jScrollPane2 = new javax.swing.JScrollPane();
         TableJugadores = new javax.swing.JTable();
+        button1 = new java.awt.Button();
         jInternalFrame2 = new javax.swing.JInternalFrame();
         jScrollPane4 = new javax.swing.JScrollPane();
         TableEstadios = new javax.swing.JTable();
+        button2 = new java.awt.Button();
         jInternalFrame3 = new javax.swing.JInternalFrame();
         jScrollPane3 = new javax.swing.JScrollPane();
         TableEquipos = new javax.swing.JTable();
+        button3 = new java.awt.Button();
         jInternalFrame4 = new javax.swing.JInternalFrame();
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
@@ -69,7 +74,7 @@ public class Visual extends javax.swing.JFrame {
         TableJugadores.setFont(new java.awt.Font("Arial", 3, 12)); // NOI18N
         TableJugadores.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
+                {"aaa", null, null, null, null, null},
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null}
@@ -88,15 +93,23 @@ public class Visual extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(TableJugadores);
 
+        button1.setLabel("button1");
+
         javax.swing.GroupLayout jInternalFrame1Layout = new javax.swing.GroupLayout(jInternalFrame1.getContentPane());
         jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
         jInternalFrame1Layout.setHorizontalGroup(
             jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1095, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrame1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jInternalFrame1Layout.setVerticalGroup(
             jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 541, Short.MAX_VALUE)
+            .addGroup(jInternalFrame1Layout.createSequentialGroup()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 509, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(button1, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Jugadores", jInternalFrame1);
@@ -124,15 +137,23 @@ public class Visual extends javax.swing.JFrame {
         });
         jScrollPane4.setViewportView(TableEstadios);
 
+        button2.setLabel("button2");
+
         javax.swing.GroupLayout jInternalFrame2Layout = new javax.swing.GroupLayout(jInternalFrame2.getContentPane());
         jInternalFrame2.getContentPane().setLayout(jInternalFrame2Layout);
         jInternalFrame2Layout.setHorizontalGroup(
             jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 1095, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrame2Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jInternalFrame2Layout.setVerticalGroup(
             jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 541, Short.MAX_VALUE)
+            .addGroup(jInternalFrame2Layout.createSequentialGroup()
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 521, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         jTabbedPane1.addTab("Estadios", jInternalFrame2);
@@ -164,15 +185,23 @@ public class Visual extends javax.swing.JFrame {
             TableEquipos.getColumnModel().getColumn(2).setResizable(false);
         }
 
+        button3.setLabel("button3");
+
         javax.swing.GroupLayout jInternalFrame3Layout = new javax.swing.GroupLayout(jInternalFrame3.getContentPane());
         jInternalFrame3.getContentPane().setLayout(jInternalFrame3Layout);
         jInternalFrame3Layout.setHorizontalGroup(
             jInternalFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 1095, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrame3Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(button3, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jInternalFrame3Layout.setVerticalGroup(
             jInternalFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 541, Short.MAX_VALUE)
+            .addGroup(jInternalFrame3Layout.createSequentialGroup()
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 507, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(button3, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Equipos", jInternalFrame3);
@@ -192,7 +221,7 @@ public class Visual extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("SImulacion", jInternalFrame4);
 
-        Panel0.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 1110, 600));
+        Panel0.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 1110, 630));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -242,12 +271,27 @@ public class Visual extends javax.swing.JFrame {
             }
         });
     }
+    public static void LLenar(){
+        for (int i = 0; i < Objetos.size(); i++) {
+            if (Objetos.get(i) instanceof Jugadores) {
+
+            }else if(Objetos.get(i) instanceof Equipos){
+                
+                
+            }else if(Objetos.get(i) instanceof Estadios){
+                    
+        }
+    }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Panel0;
     private javax.swing.JTable TableEquipos;
     private javax.swing.JTable TableEstadios;
     private javax.swing.JTable TableJugadores;
+    private java.awt.Button button1;
+    private java.awt.Button button2;
+    private java.awt.Button button3;
     private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JInternalFrame jInternalFrame2;
     private javax.swing.JInternalFrame jInternalFrame3;
