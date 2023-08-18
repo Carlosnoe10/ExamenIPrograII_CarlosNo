@@ -7,6 +7,8 @@ public class Equipos {
     public String Nacionalidad;
     public int Rating;
     public ArrayList<Jugadores> Plantilla;
+    
+    
 
     public Equipos() {
     }
