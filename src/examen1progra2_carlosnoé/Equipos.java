@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Equipos {
     public String Nombre;
     public String Nacionalidad;
-    public int Rating;
+    public double Rating;
     public ArrayList<Jugadores> Plantilla;
     
     
@@ -36,11 +36,11 @@ public class Equipos {
         this.Nacionalidad = Nacionalidad;
     }
 
-    public int getRating() {
+    public double getRating() {
         return Rating;
     }
 
-    public void setRating(int Rating) {
+    public void setRating(double Rating) {
         this.Rating = Rating;
     }
 
