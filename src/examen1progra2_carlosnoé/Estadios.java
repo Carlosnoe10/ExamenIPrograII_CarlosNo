@@ -50,7 +50,7 @@ public class Estadios {
 
     @Override
     public String toString() {
-        return "Estadios{" + "Nombre=" + Nombre + ", Cuidad=" + Cuidad + ", Capacidad=" + Capacidad + ", Perte=" + Perte + '}';
+        return  Nombre  + Cuidad +  Capacidad  + Perte ;
     }
     
     

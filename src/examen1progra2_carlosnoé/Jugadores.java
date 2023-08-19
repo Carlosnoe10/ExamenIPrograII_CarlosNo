@@ -29,8 +29,6 @@ public final class Jugadores {
         this.Rating = rate();
     }
 
-
-
     public Jugadores(int Agarre, int Lanzamiento, int Fisico, int Ritmo, int Entrada, int Vision, int Passing, int Regate, int Disparo) {
         this.Agarre = Agarre;
         this.Lanzamiento = Lanzamiento;
@@ -86,11 +84,6 @@ public final class Jugadores {
         this.Rating = Rating;
     }
 
-    @Override
-    public String toString() {
-        return "Jugadores{" + "Nombre=" + Nombre + ", edad=" + edad + ", Nacionalida=" + Nacionalida + ", Pie=" + Pie + ", Rating=" + Rating + '}';
-    }
-
     public double rate() {
 
         if (Nacionalida.equalsIgnoreCase("Portero")) {
@@ -137,10 +130,15 @@ public final class Jugadores {
             this.Regate = NumeroRandomAlto();
             this.Disparo = NumeroRandomAlto();
         }
-        
-double Prom= (Agarre+Lanzamiento+Fisico+Ritmo+Entrada+Vision+Passing+Regate+Disparo/9)*100;
-      return Prom;  
 
+        double Prom = (Agarre + Lanzamiento + Fisico + Ritmo + Entrada + Vision + Passing + Regate + Disparo / 9) * 100;
+        return Prom;
+
+    }
+
+    @Override
+    public String toString() {
+        return Nombre + edad + Nacionalida + Posicion + Pie + Rating;
     }
 
     public int NumeroRandomAlto() {

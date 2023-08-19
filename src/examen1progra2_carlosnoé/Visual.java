@@ -5,6 +5,7 @@
 package examen1progra2_carlosnoé;
 
 import java.util.ArrayList;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.table.TableColumnModel;
 import javax.swing.text.TabExpander;
 
@@ -13,8 +14,9 @@ import javax.swing.text.TabExpander;
  * @author cd507
  */
 public class Visual extends javax.swing.JFrame {
-    public static ArrayList<Object>Objetos;
-    
+
+    public static ArrayList<Object> Objetos;
+
     public Visual() {
         initComponents();
         Panel0.setVisible(true);
@@ -222,13 +224,9 @@ public class Visual extends javax.swing.JFrame {
         jInternalFrame4.setForeground(new java.awt.Color(255, 102, 0));
         jInternalFrame4.setVisible(true);
 
-        SeleccionadorDeEquipos1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        SeleccionadorDeEquipos2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
         jLabel2.setFont(new java.awt.Font("Arial", 3, 36)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Equipo 1");
+        jLabel2.setText("Equipo 2");
 
         jLabel4.setFont(new java.awt.Font("Arial", 3, 36)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -369,23 +367,43 @@ public class Visual extends javax.swing.JFrame {
             }
         });
     }
-    
-    public static void Simulacion(){
-        
+
+    public static void Simulacion() {
+
+//        int diferenciaDeRatings = Math.abs(equipo1.getRating() - equipo2.getRating());
     }
-           
-    
-    public static void LLenar(){
+
+    public void LLenar2() {
+        for (int i = 0; i < Objetos.size(); i++) {
+            SeleccionadorDeEquipos1.add(((Equipos) Objetos.get(i)).getNombre(), this);
+            SeleccionadorDeEquipos2.add(((Equipos) Objetos.get(i)).getNombre(), this);
+
+        }
+
+    }
+
+    public  void LLenarJ() {
         for (int i = 0; i < Objetos.size(); i++) {
             if (Objetos.get(i) instanceof Jugadores) {
-
-            }else if(Objetos.get(i) instanceof Equipos){
-                
-                
-            }else if(Objetos.get(i) instanceof Estadios){
-                    
+                TableJugadores.add(((Jugadores)Objetos.get(i)).toString(), this);
+            } 
         }
     }
+
+    public static void LLenarE() {
+        for (int i = 0; i < Objetos.size(); i++) {
+            if (Objetos.get(i) instanceof Estadios) {
+
+            }
+        }
+    }
+
+    public static void LLenarQ() {
+        for (int i = 0; i < Objetos.size(); i++) {
+            if (Objetos.get(i) instanceof Equipos) {
+
+            }
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -394,8 +412,8 @@ public class Visual extends javax.swing.JFrame {
     private javax.swing.JPanel Panel0;
     private javax.swing.JLabel Rankins;
     private javax.swing.JLabel Rankins2;
-    private javax.swing.JComboBox<String> SeleccionadorDeEquipos1;
-    private javax.swing.JComboBox<String> SeleccionadorDeEquipos2;
+    private javax.swing.JComboBox<Object> SeleccionadorDeEquipos1;
+    private javax.swing.JComboBox<Object> SeleccionadorDeEquipos2;
     private javax.swing.JTable TableEquipos;
     private javax.swing.JTable TableEstadios;
     private javax.swing.JTable TableJugadores;
