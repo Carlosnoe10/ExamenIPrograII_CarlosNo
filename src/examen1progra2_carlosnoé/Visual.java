@@ -5,6 +5,7 @@
 package examen1progra2_carlosnoé;
 
 import java.util.ArrayList;
+import java.util.Random;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.table.TableColumnModel;
 import javax.swing.text.TabExpander;
@@ -19,6 +20,10 @@ public class Visual extends javax.swing.JFrame {
 
     public Visual() {
         initComponents();
+        LLenarQ();
+        LLenarE();
+        LLenarJ();
+        LLenar2();
         Panel0.setVisible(true);
     }
 
@@ -88,7 +93,8 @@ public class Visual extends javax.swing.JFrame {
         TableJugadores.setFont(new java.awt.Font("Arial", 3, 12)); // NOI18N
         TableJugadores.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"aaa", null, null, null, null, null},
+                {"", null, null, null, null, null},
+                {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null}
@@ -368,9 +374,38 @@ public class Visual extends javax.swing.JFrame {
         });
     }
 
-    public static void Simulacion() {
+    public void Simulacion() {
+        Random random = new Random();
+        Object equipo1 = SeleccionadorDeEquipos1.getSelectedItem();
+        Object equipo2 = SeleccionadorDeEquipos2.getSelectedItem();
+        double diferenciaDeRatings = Math.abs(((Equipos) equipo1).getRating() - ((Equipos) equipo2).getRating());
+        double probabilidadEquipoMenorRating;
 
-//        int diferenciaDeRatings = Math.abs(equipo1.getRating() - equipo2.getRating());
+        if (diferenciaDeRatings <= 10) {
+            probabilidadEquipoMenorRating = diferenciaDeRatings * 4.0;
+        } else {
+            probabilidadEquipoMenorRating = 50 + (diferenciaDeRatings - 10) * 5.0;
+        }
+        int cantidadGoles;
+        if (diferenciaDeRatings <= 10) {
+            cantidadGoles = random.nextInt(6);
+        } else {
+            cantidadGoles = random.nextInt(11);
+        }
+
+        int golesEquipo1 = 0;
+        int golesEquipo2 = 0;
+
+        for (int i = 0; i < cantidadGoles; i++) {
+            int randomPercent = random.nextInt(100) + 1;
+
+            if (randomPercent <= probabilidadEquipoMenorRating) {
+                golesEquipo1++;
+            } else {
+                golesEquipo2++;
+            }
+        }
+
     }
 
     public void LLenar2() {
@@ -382,25 +417,27 @@ public class Visual extends javax.swing.JFrame {
 
     }
 
-    public  void LLenarJ() {
+    public void LLenarJ() {
         for (int i = 0; i < Objetos.size(); i++) {
             if (Objetos.get(i) instanceof Jugadores) {
-                TableJugadores.add(((Jugadores)Objetos.get(i)).toString(), this);
-            } 
-        }
-    }
-
-    public static void LLenarE() {
-        for (int i = 0; i < Objetos.size(); i++) {
-            if (Objetos.get(i) instanceof Estadios) {
-
+                TableJugadores.add(((Jugadores) Objetos.get(i)).toString(), this);
             }
         }
     }
 
-    public static void LLenarQ() {
+    public void LLenarE() {
+        for (int i = 0; i < Objetos.size(); i++) {
+            if (Objetos.get(i) instanceof Estadios) {
+                TableEstadios.add(((Estadios) Objetos.get(i)).toString(), this);
+            }
+        }
+    }
+//LLenarQ() LLenarE() LLenarJ()
+
+    public void LLenarQ() {
         for (int i = 0; i < Objetos.size(); i++) {
             if (Objetos.get(i) instanceof Equipos) {
+                TableEstadios.add(((Equipos) Objetos.get(i)).toString(), this);
 
             }
         }
